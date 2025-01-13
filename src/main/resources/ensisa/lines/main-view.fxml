@@ -3,8 +3,13 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ensisa.lines.MainController">
    <top>
@@ -31,4 +36,34 @@
    <center>
       <Pane fx:id="editorPane" onMouseDragged="#mouseDraggedInEditor" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" onMousePressed="#mousePressedInEditor" onMouseReleased="#mouseReleasedInEditor" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
    </center>
+   <left>
+      <VBox prefHeight="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <RadioButton fx:id="selectToolButton" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#selectToolAction" prefHeight="40.0" prefWidth="40.0" selected="true">
+               <toggleGroup>
+                  <ToggleGroup fx:id="toolGroup" />
+               </toggleGroup>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/cursorarrow.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </RadioButton>
+            <RadioButton fx:id="drawToolButton" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#drawToolAction" prefHeight="40.0" prefWidth="40.0" selected="true">
+               <toggleGroup>
+                  <ToggleGroup fx:id="toolGroup1" />
+               </toggleGroup>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/pencil.line.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </RadioButton>
+         </children>
+      </VBox>
+   </left>
 </BorderPane>
