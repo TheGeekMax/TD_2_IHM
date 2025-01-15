@@ -113,4 +113,20 @@ public class LinesEditor {
     public boolean isPointInLine(double x, double y, StraightLine straightLine) {
         return squaredDistanceToSegment(x, y, straightLine.getStartX(), straightLine.getStartY(), straightLine.getEndX(), straightLine.getEndY()) < 16;
     }
+
+    public boolean isPointInStartSelectionSquare(double x, double y, StraightLine straightLine) {
+        var selectionSquare = startSelectionSquares.get(straightLine);
+        if (selectionSquare != null) {
+            return selectionSquare.contains(x, y);
+        }
+        return false;
+    }
+
+    public boolean isPointInEndSelectionSquare(double x, double y, StraightLine straightLine) {
+        var selectionSquare = endSelectionSquares.get(straightLine);
+        if (selectionSquare != null) {
+            return selectionSquare.contains(x, y);
+        }
+        return false;
+    }
 }

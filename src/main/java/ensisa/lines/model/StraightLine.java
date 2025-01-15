@@ -23,6 +23,13 @@ public class StraightLine {
         color = new SimpleObjectProperty<>(Color.BLACK);
     }
 
+    public void offset(double dx, double dy) {
+        setStartX(getStartX() + dx);
+        setStartY(getStartY() + dy);
+        setEndX(getEndX() + dx);
+        setEndY(getEndY() + dy);
+    }
+
     public double getStartX() {
         return startX.get();
     }
